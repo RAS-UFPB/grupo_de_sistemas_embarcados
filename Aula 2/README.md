@@ -6,7 +6,24 @@
 
 <h3>Desafio 1 - Leds piscando alternadamente</h3>
 
-<img src="" alt="">
+<div align='center'>
+    <h4>Tabela de materiais necessários para esse desafio</h4>
+    <table>
+        <tr><td>Quantidade</td> <td>Item</td></tr>
+        <tr><td>01</td> <td>Arduino Uno</td></tr>
+        <tr><td>01</td> <td>Protoboard</td></tr>
+        <tr><td>02</td> <td>220Ω Resistor</td></tr>
+        <tr><td>02</td> <td>Leds</td></tr>
+        <tr><td>--</td> <td>Fios</td></tr>
+    </table>
+</div>
+
+<br>
+<div align="center"><img src="https://github.com/RAS-UFPB/Grupo-de-Robotica/blob/main/Aula%202/imgs/desafio%201.png" alt="" width="500px">
+    <p><b>Esquema de montagem do circuito</b></p>
+</div>
+
+<h4>Código</h4>
 
 ```c++
 #define LED_VERMELHO 2
@@ -29,25 +46,45 @@ void loop() {
   delay(tempo);
   tempo -= 1000;
 }
-
 ```
+
+<hr>
 
 <h3>Desafio 2 - Semáforo</h3>
 
-<img src="" alt="">
+<div align='center'>
+    <h4>Tabela de materiais necessários para esse desafio</h4>
+    <table>
+        <tr><td>Quantidade</td> <td>Item</td></tr>
+        <tr><td>01</td> <td>Arduino Uno</td></tr>
+        <tr><td>01</td> <td>Protoboard</td></tr>
+        <tr><td>03</td> <td>220Ω Resistor</td></tr>
+        <tr><td>03</td> <td>Leds</td></tr>
+        <tr><td>--</td> <td>Fios</td></tr>
+    </table>
+</div>
+
+<br>
+<div align="center"><img src="https://github.com/RAS-UFPB/Grupo-de-Robotica/blob/main/Aula%202/imgs/desafio%202.png" alt="" width="500px">
+    <p><b>Esquema de montagem do circuito</b></p>
+</div>
+
+<h4>Código</h4>
 
 ```c++
 #define LED_VERMELHO 2
 #define LED_AMARELO 3
 #define LED_VERDE 4
 
-void setup() {
+void setup()
+{
   pinMode(LED_VERMELHO, OUTPUT);
   pinMode(LED_AMARELO, OUTPUT);
   pinMode(LED_VERDE, OUTPUT);
 }
 
-void loop() {
+void loop()
+{
   digitalWrite(LED_VERMELHO, HIGH);
   digitalWrite(LED_AMARELO, LOW);
   digitalWrite(LED_VERDE, LOW);
