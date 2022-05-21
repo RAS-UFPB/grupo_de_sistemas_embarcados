@@ -1,6 +1,6 @@
 <h1>Aula 4 - Comunicação serial e a função millis.</h1>
 
-<a href=""><h2>Resumo da aula</h2></a>
+<a href="https://github.com/RAS-UFPB/Resumo-das-aulas-do-Grupo-de-Robotica/blob/main/Resumo%20aula%204"><h2>Resumo da aula</h2></a>
 
 <h2>Resolução dos desafios</h2>
 
@@ -20,7 +20,7 @@
 </div>
 
 <br>
-<div align="center"><img src="" alt="" width="500px">
+<div align="center"><img src="https://github.com/RAS-UFPB/Grupo-de-Robotica/blob/main/Aula%204/imgs/desafio%206.png" alt="" width="500px">
     <p><b>Esquema de montagem do circuito</b></p>
 </div>
 
@@ -93,7 +93,7 @@ void loop() {
 </div>
 
 <br>
-<div align="center"><img src="" alt="" width="500px">
+<div align="center"><img src="https://github.com/RAS-UFPB/Grupo-de-Robotica/blob/main/Aula%204/imgs/desafio%207.png" alt="" width="500px">
     <p><b>Esquema de montagem do circuito</b></p>
 </div>
 
