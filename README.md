@@ -1,6 +1,6 @@
 <h1>Grupo de Robótica</h1></div>
 
-<h3>Este repositorio contem as resoluções dos desafios das aulas do grupo de robótica e também os resumos das aulas.</h3>
+<h3>Este repositorio contem as resoluções dos desafios das aulas do grupo de robótica e também os resumos das aulas, lembrando que apenas as pessoas que estão inscritos no Grupo de Robótica ultimate tem acesso aos resumos.</h3>
 
 <ul>
     <li><a href="https://github.com/RAS-UFPB/Grupo-de-Robotica/tree/main/Aula%202"><b>Aula 2</b> - Introdução ao Arduino: Teoria e prática de construção circuitos básicos com Arduino.</a></li>
