@@ -4,7 +4,7 @@
 
 <ul>
     <li><a href="https://github.com/RAS-UFPB/Grupo-de-Robotica/tree/main/Aula%202"><b>Aula 2</b> - Introdução ao Arduino: Teoria e prática de construção circuitos básicos com Arduino.</a></li>
-    <li><a href=""><b>Aula 3</b> - Estruturas condicionais e utilização dos pinos de entrada e saída digitais do Arduino.</a></li>
+    <li><a href="https://github.com/RAS-UFPB/Grupo-de-Robotica/tree/main/Aula%203"><b>Aula 3</b> - Estruturas condicionais e utilização dos pinos de entrada e saída digitais do Arduino.</a></li>
     <li><a href=""><b>Aula 4</b> - Comunicação serial e a função millis.</a></li>
     <li><a href=""><b>Aula 5</b> - Sinais analógicos e digitais e sensor ultrassônico e LDR.</a></li>
     <li><a href=""><b>Aula 6</b> - Utilização dos pinos de entrada e saida(PWM) analógicos, Estrutura de repeticão for e servo motor.</a></li>
