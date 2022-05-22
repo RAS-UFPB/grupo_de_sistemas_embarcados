@@ -1,4 +1,4 @@
-<h1>Aula 4 - Comunicação serial e a função millis.</h1>
+<h1>Aula 5 - Sensores.</h1>
 
 <a href="https://github.com/RAS-UFPB/Resumo-das-aulas-do-Grupo-de-Robotica/blob/main/Resumo%20aula%204"><h2>Resumo da aula</h2></a>
 
