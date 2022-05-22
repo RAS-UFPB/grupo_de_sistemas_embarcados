@@ -4,7 +4,8 @@
 
 <h2>Resolução dos desafios</h2>
 
-<h3>Desafio 1 - Controle um Servo Motor usando um potenciômetro</h3>
+<h3>Desafio 1 - Faça 2 motores girarem em sentidos opostos, use um potenciômetro para decidir em qual estado os motores estarão.
+</h3>
 
 <div align='center'>
     <h4>Tabela de materiais necessários para esse desafio</h4>
@@ -13,85 +14,64 @@
         <tr><td>01</td> <td>Arduino Uno</td></tr>
         <tr><td>01</td> <td>Protoboard</td></tr>
         <tr><td>01</td> <td>Potenciômetro</td></tr>
-        <tr><td>01</td> <td>Servo Motor</td></tr>
+        <tr><td>02</td> <td>Motores DC</td></tr>
+        <tr><td>01</td> <td>L293D</td></tr>
         <tr><td>--</td> <td>Fios</td></tr>
     </table>
 </div>
 
 <br>
-<div align="center"><img src="./images/A06D01.png" alt="" width="500px">
+<div align="center"><img src="./images/A07D01.png" alt="" width="500px">
     <p><b>Esquema de montagem do circuito</b></p>
 </div>
 
 <h4>Código</h4>
 
 ```c++
-#include <Servo.h>
 
-#define SERVO_PIN 3
+#define MOTOR11 5
+#define MOTOR12 6
+#define MOTOR21 9
+#define MOTOR22 10
+
+
+#define CHANGE_VALUE 510
+
 
 
 int potValue = 0;
-int servoValue = 0;
-
-Servo servo;
 
 
-void setup()
-{
-  servo.attach(SERVO_PIN);
-  servo.write(servoValue);
-}
-
-void loop()
-{
-	potValue = analogRead(A0);
+void setup() {
+  pinMode(MOTOR11, OUTPUT);
+  pinMode(MOTOR12, OUTPUT);
+  pinMode(MOTOR21, OUTPUT);
+  pinMode(MOTOR22, OUTPUT);
   
-  	servoValue = map(potValue, 0, 1023, 0, 180);
-  	servo.write(servoValue);
+  
+  digitalWrite(MOTOR11, LOW);
+  digitalWrite(MOTOR12, LOW);
+  digitalWrite(MOTOR21, LOW);
+  digitalWrite(MOTOR22, LOW);
+  
 }
 
-```
-
-<hr>
-
-<h3>Desafio 2 - Dimmer utilizando a comunicação serial e o PWM</h3>
-
-<div align='center'>
-    <h4>Tabela de materiais necessários para esse desafio</h4>
-    <table>
-        <tr><td>Quantidade</td> <td>Item</td></tr>
-        <tr><td>01</td> <td>Arduino Uno</td></tr>
-        <tr><td>01</td> <td>Protoboard</td></tr>
-        <tr><td>01</td> <td>220Ω Resistor</td></tr>
-        <tr><td>01</td> <td>Leds</td></tr>
-        <tr><td>--</td> <td>Fios</td></tr>
-    </table>
-</div>
-
-<br>
-<div align="center"><img src="./images/A06D02.png" alt="" width="500px">
-    <p><b>Esquema de montagem do circuito</b></p>
-</div>
-
-<h4>Código</h4>
-
-```c++
-#define LED_PIN 5
-
-
-void setup()
-{
-  pinMode(LED_PIN, OUTPUT);
-  Serial.begin(9600);
-}
-
-void loop()
-{
-  if(Serial.available() > 0){
-  	int value = Serial.parseInt();
-    analogWrite(LED_PIN, value);
-
+void loop() {
+  potValue = analogRead(A0);
+  
+  if(potValue >= CHANGE_VALUE){
+    digitalWrite(MOTOR11, HIGH);
+    digitalWrite(MOTOR12, LOW);
+    digitalWrite(MOTOR21, LOW);
+    digitalWrite(MOTOR22, HIGH);
+  }else{
+  	digitalWrite(MOTOR11, LOW);
+    digitalWrite(MOTOR12, HIGH);
+    digitalWrite(MOTOR21, HIGH);
+    digitalWrite(MOTOR22, LOW);
   }
+  
 }
+
+
 ```
