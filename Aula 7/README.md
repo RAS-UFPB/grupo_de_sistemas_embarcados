@@ -21,57 +21,66 @@
 </div>
 
 <br>
-<div align="center"><img src="./images/A07D01.png" alt="" width="500px">
+<div align="center"><img src="https://github.com/RAS-UFPB/Grupo-de-Robotica/blob/main/Aula%207/imgs/desafio%208.png" alt="" width="500px">
     <p><b>Esquema de montagem do circuito</b></p>
 </div>
 
 <h4>Código</h4>
 
 ```c++
+#define POTENCIOMETRO A0
+#define ENTRADA1 5
+#define ENTRADA2 6
+#define ENTRADA3 9
+#define ENTRADA4 10
+#define ENABLE1 2
+#define ENABLE3 3
 
-#define MOTOR11 5
-#define MOTOR12 6
-#define MOTOR21 9
-#define MOTOR22 10
-
-
-#define CHANGE_VALUE 510
-
-
-
-int potValue = 0;
-
+int valorPotenc;
+int estadoMovimento;
 
 void setup() {
-  pinMode(MOTOR11, OUTPUT);
-  pinMode(MOTOR12, OUTPUT);
-  pinMode(MOTOR21, OUTPUT);
-  pinMode(MOTOR22, OUTPUT);
+    Serial.begin(9600);
   
-  
-  digitalWrite(MOTOR11, LOW);
-  digitalWrite(MOTOR12, LOW);
-  digitalWrite(MOTOR21, LOW);
-  digitalWrite(MOTOR22, LOW);
-  
+    pinMode(POTENCIOMETRO, INPUT);
+    pinMode(ENTRADA1, OUTPUT);
+    pinMode(ENTRADA2, OUTPUT);
+    pinMode(ENTRADA3, OUTPUT);
+    pinMode(ENTRADA4, OUTPUT);
+    pinMode(ENABLE1, OUTPUT);
+    pinMode(ENABLE3, OUTPUT);
 }
 
 void loop() {
-  potValue = analogRead(A0);
+    valorPotenc = analogRead(POTENCIOMETRO);
+    estadoMovimento = map(valorPotenc, 0, 1023, 1, 3);
   
-  if(potValue >= CHANGE_VALUE){
-    digitalWrite(MOTOR11, HIGH);
-    digitalWrite(MOTOR12, LOW);
-    digitalWrite(MOTOR21, LOW);
-    digitalWrite(MOTOR22, HIGH);
-  }else{
-  	digitalWrite(MOTOR11, LOW);
-    digitalWrite(MOTOR12, HIGH);
-    digitalWrite(MOTOR21, HIGH);
-    digitalWrite(MOTOR22, LOW);
-  }
+    if(estadoMovimento == 1) {
+        digitalWrite(ENABLE1, HIGH);
+        digitalWrite(ENABLE3, HIGH);
+
+        analogWrite(ENTRADA1, HIGH);
+        digitalWrite(ENTRADA2, LOW);
+        digitalWrite(ENTRADA3, LOW);
+        digitalWrite(ENTRADA4, HIGH);
+    } else if(estadoMovimento == 2) {
+        digitalWrite(ENABLE1, HIGH);
+        digitalWrite(ENABLE3, HIGH);
+    
+        digitalWrite(ENTRADA1, LOW);
+        digitalWrite(ENTRADA2, HIGH);
+        digitalWrite(ENTRADA3, HIGH);
+        digitalWrite(ENTRADA4, LOW);
+    } else if(estadoMovimento == 3) {
+        digitalWrite(ENABLE1, LOW);
+        digitalWrite(ENABLE3, LOW);
+
+        digitalWrite(ENTRADA1, LOW);
+        digitalWrite(ENTRADA2, LOW);
+        digitalWrite(ENTRADA3, LOW);
+        digitalWrite(ENTRADA4, LOW);
+    }
   
+    Serial.println(estadoMovimento);
 }
-
-
 ```
