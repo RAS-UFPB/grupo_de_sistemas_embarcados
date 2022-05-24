@@ -30,27 +30,22 @@
 
 #define SERVO_PIN 3
 
-
 int potValue = 0;
 int servoValue = 0;
 
 Servo servo;
 
-
-void setup()
-{
-  servo.attach(SERVO_PIN);
-  servo.write(servoValue);
+void setup() {
+    servo.attach(SERVO_PIN);
+    servo.write(servoValue);
 }
 
-void loop()
-{
-	potValue = analogRead(A0);
+void loop() {
+    potValue = analogRead(A0);
   
-  	servoValue = map(potValue, 0, 1023, 0, 180);
-  	servo.write(servoValue);
+    servoValue = map(potValue, 0, 1023, 0, 180);
+    servo.write(servoValue);
 }
-
 ```
 
 <hr>
@@ -79,19 +74,15 @@ void loop()
 ```c++
 #define LED_PIN 5
 
-
-void setup()
-{
-  pinMode(LED_PIN, OUTPUT);
-  Serial.begin(9600);
+void setup() {
+    pinMode(LED_PIN, OUTPUT);
+    Serial.begin(9600);
 }
 
-void loop()
-{
-  if(Serial.available() > 0){
+void loop() {
+    if(Serial.available() > 0){
   	int value = Serial.parseInt();
-    analogWrite(LED_PIN, value);
-
-  }
+    	analogWrite(LED_PIN, value);
+    }
 }
 ```
