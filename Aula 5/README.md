@@ -1,10 +1,10 @@
-<h1>Aula 5 - Sensores.</h1>
+<h1>Aula 6 - PWM.</h1>
 
-<a href="https://github.com/RAS-UFPB/Resumo-das-aulas-do-Grupo-de-Robotica/blob/main/Resumo%20aula%204"><h2>Resumo da aula</h2></a>
+<a href="https://github.com/RAS-UFPB/Resumo-das-aulas-do-Grupo-de-Robotica/blob/main/Resumo%20aula%205"><h2>Resumo da aula</h2></a>
 
 <h2>Resolução dos desafios</h2>
 
-<h3>Desafio 1 - Sensor de ré utilizando o sensor ultrassônico e buzzer</h3>
+<h3>Desafio 1 - Controle um Servo Motor usando um potenciômetro</h3>
 
 <div align='center'>
     <h4>Tabela de materiais necessários para esse desafio</h4>
@@ -12,62 +12,45 @@
         <tr><td>Quantidade</td> <td>Item</td></tr>
         <tr><td>01</td> <td>Arduino Uno</td></tr>
         <tr><td>01</td> <td>Protoboard</td></tr>
-        <tr><td>01</td> <td>100Ω Resistor</td></tr>
-        <tr><td>01</td> <td>Buzzer</td></tr>
+        <tr><td>01</td> <td>Potenciômetro</td></tr>
+        <tr><td>01</td> <td>Servo Motor</td></tr>
         <tr><td>--</td> <td>Fios</td></tr>
     </table>
 </div>
 
 <br>
-<div align="center"><img src="./images/A05D01.png" alt="" width="500px">
+<div align="center"><img src="./images/A06D01.png" alt="" width="500px">
     <p><b>Esquema de montagem do circuito</b></p>
 </div>
 
 <h4>Código</h4>
 
 ```c++
-#define ECHO_PIN 4 
-#define TRIGGER_PIN 5 
+#include <Servo.h>
 
-#define BUZZER_PIN 6
+#define SERVO_PIN 3
 
-#define MIN_DISTANCE_TO_ALARM 100 /*Distância em cm, escolhida arbitrariamente*/
+int potValue = 0;
+int servoValue = 0;
 
-long duration;
-int distance; 
-
-
+Servo servo;
 
 void setup() {
-  pinMode(TRIGGER_PIN, OUTPUT); 
-  pinMode(ECHO_PIN, INPUT); 
-  pinMode(BUZZER_PIN, OUTPUT);
+    servo.attach(SERVO_PIN);
+    servo.write(servoValue);
 }
+
 void loop() {
-  /*Efetuando a leitura da distância*/
-  digitalWrite(TRIGGER_PIN, LOW);
-  delayMicroseconds(2);
-  digitalWrite(TRIGGER_PIN, HIGH);
-  delayMicroseconds(10);
-  digitalWrite(TRIGGER_PIN, LOW);
- 
-  duration = pulseIn(ECHO_PIN, HIGH);
-
-  distance = duration * 0.034 / 2; 
+    potValue = analogRead(A0);
   
-  /*Avaliando acionamento do alarme (Buzzer)*/
-  if(distance <= MIN_DISTANCE_TO_ALARM){
-  	tone(BUZZER_PIN, 1000);
-  }else{
-    noTone(BUZZER_PIN);
-  }
+    servoValue = map(potValue, 0, 1023, 0, 180);
+    servo.write(servoValue);
 }
-
 ```
 
 <hr>
 
-<h3>Desafio 2 - Ligar/Desligar o LED de acordo com a luminosidade utilizando o LDR</h3>
+<h3>Desafio 2 - Dimmer utilizando a comunicação serial e o PWM</h3>
 
 <div align='center'>
     <h4>Tabela de materiais necessários para esse desafio</h4>
@@ -75,39 +58,31 @@ void loop() {
         <tr><td>Quantidade</td> <td>Item</td></tr>
         <tr><td>01</td> <td>Arduino Uno</td></tr>
         <tr><td>01</td> <td>Protoboard</td></tr>
-        <tr><td>02</td> <td>220Ω Resistor</td></tr>
+        <tr><td>01</td> <td>220Ω Resistor</td></tr>
         <tr><td>01</td> <td>Leds</td></tr>
         <tr><td>--</td> <td>Fios</td></tr>
     </table>
 </div>
 
 <br>
-<div align="center"><img src="./images/A05D02.png" alt="" width="500px">
+<div align="center"><img src="./images/A06D02.png" alt="" width="500px">
     <p><b>Esquema de montagem do circuito</b></p>
 </div>
 
 <h4>Código</h4>
 
 ```c++
-#define LED_PIN 7
-#define MIN_LUMINOSITY 800
+#define LED_PIN 5
 
-int ldrValue = 0;
-
-
-void setup()
-{
-  pinMode(LED_PIN, OUTPUT);
+void setup() {
+    pinMode(LED_PIN, OUTPUT);
+    Serial.begin(9600);
 }
 
-void loop()
-{
-  ldrValue = analogRead(A0);
-  
-  if(ldrValue >= MIN_LUMINOSITY){
-  	digitalWrite(LED_PIN, HIGH);
-  }else{
-    digitalWrite(LED_PIN, LOW);
-  } 
+void loop() {
+    if(Serial.available() > 0){
+  	int value = Serial.parseInt();
+    	analogWrite(LED_PIN, value);
+    }
 }
 ```

@@ -1,10 +1,10 @@
-<h1>Aula 3 - Estruturas condicionais e utilização dos pinos de entrada e saída digitais do Arduino.</h1>
+<h1>Aula 4 - Comunicação serial e a função millis.</h1>
 
 <a href="https://github.com/RAS-UFPB/Resumo-das-aulas-do-Grupo-de-Robotica/blob/main/Resumo%20aula%203"><h2>Resumo da aula</h2></a>
 
 <h2>Resolução dos desafios</h2>
 
-<h3>Desafio 1 - Acionamento de alarme com botão</h3>
+<h3>Desafio 1 - Buzzer e leds funcionando alternadamente usando a função millis</h3>
 
 <div align='center'>
     <h4>Tabela de materiais necessários para esse desafio</h4>
@@ -12,56 +12,15 @@
         <tr><td>Quantidade</td> <td>Item</td></tr>
         <tr><td>01</td> <td>Arduino Uno</td></tr>
         <tr><td>01</td> <td>Protoboard</td></tr>
-        <tr><td>01</td> <td>220Ω Resistor</td></tr>
+        <tr><td>02</td> <td>220Ω Resistor</td></tr>
+        <tr><td>02</td> <td>Leds</td></tr>
         <tr><td>01</td> <td>Buzzer</td></tr>
         <tr><td>--</td> <td>Fios</td></tr>
     </table>
 </div>
 
 <br>
-<div align="center"><img src="https://github.com/RAS-UFPB/Grupo-de-Robotica/blob/main/Aula%203/imgs/desafio%203.png" alt="" width="500px">
-    <p><b>Esquema de montagem do circuito</b></p>
-</div>
-
-<h4>Código</h4>
-
-```c++
-#define BOTAO 8
-#define BUZZER 9
-
-void setup() {
-    pinMode(BOTAO, INPUT);
-    pinMode(BUZZER, OUTPUT);
-}
-
-void loop() {
-    if (digitalRead(BOTAO)){
-        tone(BUZZER, 2000);
-    } else {
-        noTone(BUZZER);
-    }
-}
-```
-
-<hr>
-
-<h3>Desafio 2 - Semáforo que dá a vez para o pedestre ao apertar um botão</h3>
-
-<div align='center'>
-    <h4>Tabela de materiais necessários para esse desafio</h4>
-    <table>
-        <tr><td>Quantidade</td> <td>Item</td></tr>
-        <tr><td>01</td> <td>Arduino Uno</td></tr>
-        <tr><td>01</td> <td>Protoboard</td></tr>
-        <tr><td>04</td> <td>220Ω Resistor</td></tr>
-        <tr><td>03</td> <td>Leds</td></tr>
-        <tr><td>01</td> <td>Botão</td></tr>
-        <tr><td>--</td> <td>Fios</td></tr>
-    </table>
-</div>
-
-<br>
-<div align="center"><img src="https://github.com/RAS-UFPB/Grupo-de-Robotica/blob/main/Aula%203/imgs/desafio%204.png" alt="" width="500px">
+<div align="center"><img src="./imgs/desafio%206.png" alt="" width="500px">
     <p><b>Esquema de montagem do circuito</b></p>
 </div>
 
@@ -69,63 +28,57 @@ void loop() {
 
 ```c++
 #define LED_VERMELHO 4
-#define LED_AMARELO 3
-#define LED_VERDE 2
-#define BOTAO 5
+#define LED_AZUL 3
+#define BUZZER 2
 
-int i;
+unsigned long millisLed1 = millis();
+unsigned long millisLed2 = millis();
+unsigned long millisBuzzer = millis();
 
 void setup() {
     pinMode(LED_VERMELHO, OUTPUT);
-    pinMode(LED_AMARELO, OUTPUT);
-    pinMode(LED_VERDE, OUTPUT);
-    pinMode(BOTAO, INPUT);
+    pinMode(LED_AZUL, OUTPUT);
+    pinMode(BUZZER, OUTPUT);
 }
 
 void loop() {
-    digitalWrite(LED_VERMELHO, HIGH);
-    digitalWrite(LED_AMARELO, LOW);
-    digitalWrite(LED_VERDE, LOW);
-    delay(2000);
-  
-    digitalWrite(LED_VERMELHO, LOW);
-    digitalWrite(LED_AMARELO, HIGH);
-    digitalWrite(LED_VERDE, LOW);
-    delay(1000);
-    if(digitalRead(BOTAO)) {
+    if ((millis() - millisLed1) < 500) {
         digitalWrite(LED_VERMELHO, HIGH);
-        digitalWrite(LED_AMARELO, LOW);
-        digitalWrite(LED_VERDE, LOW);
-        delay(2000);
-    } else {
-        delay(1000);
-    }
-  
-    if(digitalRead(BOTAO)){
-        digitalWrite(LED_VERMELHO, HIGH);
-        digitalWrite(LED_AMARELO, LOW);
-        digitalWrite(LED_VERDE, LOW);
-        delay(2000);
     } else {
         digitalWrite(LED_VERMELHO, LOW);
-        digitalWrite(LED_AMARELO, LOW);
-        digitalWrite(LED_VERDE, HIGH);
-        delay(1000);
-    
-        if(digitalRead(BOTAO)) {
-            digitalWrite(LED_VERMELHO, HIGH);
-            digitalWrite(LED_AMARELO, LOW);
-            digitalWrite(LED_VERDE, LOW);
-            delay(2000);
-        } else {
-            delay(1000);
-        }
+    }
+  
+    if ((millis() - millisLed1) > 1500) {
+        millisLed1 = millis();
+    }
+  
+    if ((millis() - millisLed2) < 1500) {
+        digitalWrite(LED_AZUL, HIGH);
+    } else {
+        digitalWrite(LED_AZUL, LOW);
+    }
+  
+    if ((millis() - millisLed2) > 2500) {
+        millisLed2 = millis();
+    }
+
+  
+    if ((millis() - millisBuzzer) < 2500) {
+        tone(BUZZER, 2000);
+    } else {
+        noTone(BUZZER);
+    }
+  
+    if ((millis() - millisBuzzer) > 3500) {
+        millisBuzzer = millis();
     }
 }
+
 ```
+
 <hr>
 
-<h3>Desafio 3 - Leds piscando alternadamente, aumentando a velocidade de piscada ou diminuindo para cada click no botão</h3>
+<h3>Desafio 2 - Leds acendendo através do monitor serial</h3>
 
 <div align='center'>
     <h4>Tabela de materiais necessários para esse desafio</h4>
@@ -133,58 +86,53 @@ void loop() {
         <tr><td>Quantidade</td> <td>Item</td></tr>
         <tr><td>01</td> <td>Arduino Uno</td></tr>
         <tr><td>01</td> <td>Protoboard</td></tr>
-        <tr><td>04</td> <td>220Ω Resistor</td></tr>
-        <tr><td>02</td> <td>Leds</td></tr>
-        <tr><td>02</td> <td>Botão</td></tr>
+        <tr><td>03</td> <td>220Ω Resistor</td></tr>
+        <tr><td>03</td> <td>Leds</td></tr>
         <tr><td>--</td> <td>Fios</td></tr>
     </table>
 </div>
 
 <br>
-<div align="center"><img src="https://github.com/RAS-UFPB/Grupo-de-Robotica/blob/main/Aula%203/imgs/desafio%205.png" alt="" width="500px">
+<div align="center"><img src="./imgs/desafio%207.png" alt="" width="500px">
     <p><b>Esquema de montagem do circuito</b></p>
 </div>
 
 <h4>Código</h4>
 
 ```c++
-#define LED_VERMELHO 2
-#define LED_AZUL 3
-#define AUMENTA 5
-#define DIMINUI 6
+#define LED_VERDE 4
+#define LED_AMARELO 3
+#define LED_AZUL 2
 
-int tempo = 3000;
+String valorLido; 
 
 void setup() {
+    Serial.begin(9600);
+  
     pinMode(LED_AZUL, OUTPUT);
-    pinMode(LED_VERMELHO, OUTPUT);
-    pinMode(AUMENTA, INPUT);
-    pinMode(DIMINUI, INPUT);
+    pinMode(LED_AMARELO, OUTPUT);
+    pinMode(LED_VERDE, OUTPUT);
 }
 
 void loop() {
-    digitalWrite(LED_AZUL, HIGH);
-    digitalWrite(LED_VERMELHO, LOW);
-    if(digitalRead(AUMENTA)) {
-        tempo += 1000;
-        delay(tempo);
-    } else if(digitalRead(DIMINUI) && (tempo > 1000)) {
-        tempo -= 1000;
-        delay(tempo);
-    } else {
-        delay(tempo);
-    }
+    valorLido = Serial.readString();
   
-    digitalWrite(LED_AZUL, LOW);
-    digitalWrite(LED_VERMELHO, HIGH);
-    if(digitalRead(AUMENTA)) {
-        tempo += 1000;
-        delay(tempo);
-    } else if(digitalRead(DIMINUI) && (tempo > 1000)) {
-        tempo -= 1000;
-        delay(tempo);
+    if(valorLido == "VERDE") {
+        digitalWrite(LED_VERDE, HIGH);
+        digitalWrite(LED_AMARELO, LOW);
+        digitalWrite(LED_AZUL, LOW);
+    } else if (valorLido == "AMARELO") {
+        digitalWrite(LED_VERDE, LOW);
+        digitalWrite(LED_AMARELO, HIGH);
+        digitalWrite(LED_AZUL, LOW);
+    } else if (valorLido == "AZUL") {
+        digitalWrite(LED_VERDE, LOW);
+        digitalWrite(LED_AMARELO, LOW);
+        digitalWrite(LED_AZUL, HIGH);
     } else {
-        delay(tempo);
+  	    digitalWrite(LED_VERDE, LOW);
+        digitalWrite(LED_AMARELO, LOW);
+        digitalWrite(LED_AZUL, LOW);
     }
 }
 ```
