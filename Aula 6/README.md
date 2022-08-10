@@ -1,4 +1,4 @@
-<h1>Aula 7 - Atuadores.</h1>
+<h1>Aula 6 - Controlando motores utilizando pontes H.</h1>
 
 <a href="https://github.com/RAS-UFPB/Resumo-das-aulas-do-Grupo-de-Robotica/blob/main/Resumo%20aula%206"><h2>Resumo da aula</h2></a>
 

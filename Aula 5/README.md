@@ -1,4 +1,4 @@
-<h1>Aula 6 - PWM.</h1>
+<h1>Aula 5 - Sinais de saída analógicos com PWM.</h1>
 
 <a href="https://github.com/RAS-UFPB/Resumo-das-aulas-do-Grupo-de-Robotica/blob/main/Resumo%20aula%205"><h2>Resumo da aula</h2></a>
 
@@ -81,7 +81,7 @@ void setup() {
 
 void loop() {
     if(Serial.available() > 0){
-  	int value = Serial.parseInt();
+  	    int value = Serial.parseInt();
     	analogWrite(LED_PIN, value);
     }
 }

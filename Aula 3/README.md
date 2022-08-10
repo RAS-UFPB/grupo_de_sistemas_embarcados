@@ -1,4 +1,4 @@
-<h1>Aula 4 - Comunicação serial e a função millis.</h1>
+<h1>Aula 3 - Comunicação serial e a função millis.</h1>
 
 <a href="https://github.com/RAS-UFPB/Resumo-das-aulas-do-Grupo-de-Robotica/blob/main/Resumo%20aula%203"><h2>Resumo da aula</h2></a>
 
