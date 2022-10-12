@@ -1,6 +1,6 @@
 <h1>Aula 2 - Estruturas condicionais e utilização dos pinos de entrada e saída digitais do Arduino.</h1>
 
-<a href="https://github.com/RAS-UFPB/Resumo-das-aulas-do-Grupo-de-Robotica/blob/main/Resumo%20aula%202"><h2>Resumo da aula</h2></a>
+<a href="https://github.com/RAS-UFPB/Resumo-das-aulas-do-Grupo-de-Robotica/blob/main/Resumo%20aula%202"><b>Resumo da aula</b></a>
 
 <h2>Resolução dos desafios</h2>
 
