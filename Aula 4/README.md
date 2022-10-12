@@ -1,6 +1,6 @@
 <h1>Aula 4 - Sinais de entrada analógicos e digitais: utilizando sensores.</h1>
 
-<a href="https://github.com/RAS-UFPB/Resumo-das-aulas-do-Grupo-de-Robotica/blob/main/Resumo%20aula%204"><h2>Resumo da aula</h2></a>
+<a href="https://github.com/RAS-UFPB/Resumo-das-aulas-do-Grupo-de-Robotica/blob/main/Resumo%20aula%204"><b>Resumo da aula</b></a>
 
 <h2>Resolução dos desafios</h2>
 
