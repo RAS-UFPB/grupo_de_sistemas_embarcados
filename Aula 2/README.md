@@ -20,7 +20,10 @@
 
 <br>
 
-<p>imagem</p>
+<div align="center"><img src="./imgs/circuito desafio 1.png" alt="" width="800px">
+    <p><b>Esquema de montagem do circuito</b></p>
+</div>
+<hr>
 
 <h4>Código</h4>
 
@@ -94,7 +97,10 @@ void loop(){
 
 <br>
 
-<p>imagem</p>
+<div align="center"><img src="./imgs/circuito desafio 2.png" alt="" width="800px">
+    <p><b>Esquema de montagem do circuito</b></p>
+</div>
+<hr>
 
 <h4>Código:</h4>
 
