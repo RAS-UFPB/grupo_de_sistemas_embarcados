@@ -11,7 +11,7 @@
     <table>
         <tr><td>Quantidade</td> <td>Item</td></tr>
         <tr><td>01</td> <td>Protoboard</td></tr>
-        <tr><td>04</td> <td>1kΩ Resistor</td></tr>
+        <tr><td>04</td> <td>400Ω Resistor</td></tr>
         <tr><td>04</td> <td>Leds</td></tr>
         <tr><td>01</td> <td>Bateria 9V</td></tr>
         <tr><td>--</td> <td>Fios</td></tr>
@@ -31,7 +31,7 @@
     <table>
         <tr><td>Quantidade</td> <td>Item</td></tr>
         <tr><td>01</td> <td>Protoboard</td></tr>
-        <tr><td>02</td> <td>220Ω Resistor</td></tr>
+        <tr><td>02</td> <td>400Ω Resistor</td></tr>
         <tr><td>02</td> <td>Leds</td></tr>
         <tr><td>02</td> <td>Botão</td></tr>
         <tr><td>01</td> <td>Bateria 9V</td></tr>
