@@ -1,11 +1,10 @@
-<h1>Aula 3 - Atuadores, PWM, Servo Motores e Controlando Motores com Ponte H</h1>
+<h1>Aula 3</h1>
 
 <a href="https://github.com/RAS-UFPB/Resumo-das-aulas-do-Grupo-de-Robotica/blob/main/Resumo%20aula%203"><b>Resumo da aula</b></a>
 
 <h2>Resolução dos desafios</h2>
 
-
-<h3>Desafio 1 - Construindo um Dimmer com um Led e a entrada Serial</h3>
+<h3>Desafio 1</h3>
 
 <div align='center'>
     <h4>Tabela de materiais necessários para esse desafio</h4>
@@ -46,7 +45,7 @@ void loop() {
 
 
 
-<h3>Desafio 2 - Controle um Servo Motor usando um potenciômetro</h3>
+<h3>Desafio 2</h3>
 
 <div align='center'>
     <h4>Tabela de materiais necessários para esse desafio</h4>
@@ -87,8 +86,7 @@ void loop(){
 ```
 
 
-<h3>Desafio 3 - Faça 2 motores girarem em sentidos opostos, use um potenciômetro para decidir em qual estado os motores estarão.
-</h3>
+<h3>Desafio 3</h3>
 
 <div align='center'>
     <h4>Tabela de materiais necessários para esse desafio</h4>
