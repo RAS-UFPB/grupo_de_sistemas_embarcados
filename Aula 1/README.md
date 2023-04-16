@@ -19,7 +19,7 @@
 </div>
 
 <br>
-<div align="center"><img src="./imgs/desafio1.png" alt="" width="800px">
+<div align="center"><img src="./imgs/desafio_01.png" alt="" width="800px">
     <p><b>Esquema de montagem do circuito</b></p>
 </div>
 <hr>
@@ -40,6 +40,6 @@
 </div>
 
 <br>
-<div align="center"><img src="./imgs/desafio2.png" alt="" width="800px">
+<div align="center"><img src="./imgs/desafio_02.png" alt="" width="800px">
     <p><b>Esquema de montagem do circuito</b></p>
 </div>
