@@ -1,6 +1,6 @@
 <h1>Grupo de Sistemas Embarcados</h1></div>
 
-<h3>Este repositorio contem as resoluções dos desafios das aulas do grupo de robótica e também os resumos das aulas, lembrando que apenas as pessoas que estão inscritos no Grupo de Robótica ultimate tem acesso aos resumos.</h3>
+<h3>Este repositorio contem as resoluções dos desafios das aulas do grupo de sistemas embarcados e também os resumos das aulas, lembrando que apenas as pessoas que estão inscritos no grupo de sistemas embarcados ultimate tem acesso aos resumos.</h3>
 
 <ul>
     <li><a href="https://github.com/RAS-UFPB/Grupo-de-Robotica/tree/main/Aula%201"><b>Aula 1</b>.</a></li>
