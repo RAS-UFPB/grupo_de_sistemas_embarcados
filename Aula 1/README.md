@@ -1,4 +1,4 @@
-<h1>Aula 1 - Introdução ao Arduino: Teoria e prática de construção circuitos básicos com Arduino.</h1>
+<h1>Aula 1.</h1>
 
 <a href="https://github.com/RAS-UFPB/Resumo-das-aulas-do-Grupo-de-Robotica/tree/main/Resumo%20aula%201"><b>Resumo da aula</b></a>
 
