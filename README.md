@@ -12,7 +12,3 @@
 </ul>
 
 <br>
-
-<div align="center">
-    <img src="https://github.com/RAS-UFPB/.github/blob/main/profile/imagens/GDR%20v2.png" alt="" width="400px">
-</div>
