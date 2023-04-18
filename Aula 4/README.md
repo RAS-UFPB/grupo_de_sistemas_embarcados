@@ -141,6 +141,7 @@ void loop() {
     
   }else if(temperatura >= 60 && luz > 500){
   	tone(BUZZER, 261);
+    digitalWrite(LED_VD, HIGH);
     
   }else{
   	digitalWrite(LED_VD, HIGH);
