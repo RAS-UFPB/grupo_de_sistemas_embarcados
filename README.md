@@ -6,6 +6,7 @@
     <li><a href="https://github.com/RAS-UFPB/Grupo-de-Robotica/tree/main/Aula%201"><b>Aula 1</b>.</a></li>
     <li><a href="https://github.com/RAS-UFPB/Grupo-de-Robotica/tree/main/Aula%202"><b>Aula 2</b>.</a></li>
     <li><a href="https://github.com/RAS-UFPB/Grupo-de-Robotica/tree/main/Aula%203"><b>Aula 3</b>.</a></li>
+    <li><a href="https://github.com/RAS-UFPB/Grupo-de-Robotica/tree/main/Aula%204"><b>Aula 4</b>.</a></li>
 </ul>
 
 <br>
