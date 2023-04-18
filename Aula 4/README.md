@@ -60,11 +60,11 @@ void loop()
  
   if(distancia >= 250){
     digitalWrite(LED_VD, HIGH);
-  	digitalWrite(LED_AM, HIGH);
+    digitalWrite(LED_AM, HIGH);
     digitalWrite(LED_VM, HIGH);
     
   }else if(distancia >= 150){
-  	digitalWrite(LED_VD, HIGH);
+    digitalWrite(LED_VD, HIGH);
     digitalWrite(LED_AM, HIGH);
     digitalWrite(LED_VM, LOW);
     
@@ -140,12 +140,12 @@ void loop() {
     }
     
   }else if(temperatura >= 60 && luz > 500){
-  	tone(BUZZER, 261);
+    tone(BUZZER, 261);
     digitalWrite(LED_VD, HIGH);
     
   }else{
-  	digitalWrite(LED_VD, HIGH);
-  	noTone(BUZZER);
+    digitalWrite(LED_VD, HIGH);
+    noTone(BUZZER);
   }
   
   delay(300);
