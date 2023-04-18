@@ -19,7 +19,7 @@
 </div>
 
 <br>
-<div align="center"><img src="Aula 4/imgs/sensor_de_re.png" alt="" width="500px">
+<div align="center"><img src="/Aula 4/imgs/sensor_de_re.png" alt="" width="500px">
     <p><b>Esquema de montagem do circuito</b></p>
 </div>
 
@@ -95,7 +95,7 @@ void loop()
 </div>
 
 <br>
-<div align="center"><img src="Aula 4/imgs/sensor_incendio.png" alt="" width="500px">
+<div align="center"><img src="/Aula 4/imgs/sensor_incendio.png" alt="" width="500px">
     <p><b>Esquema de montagem do circuito</b></p>
 </div>
 
