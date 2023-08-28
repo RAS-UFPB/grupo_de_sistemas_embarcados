@@ -85,69 +85,113 @@ void loop()
         <tr><td>Quantidade</td><td>Item</td></tr>
         <tr><td>01</td> <td>Arduino Uno</td></tr>
         <tr><td>01</td> <td>Protoboard</td></tr>
-        <tr><td>02</td> <td>LED</td></tr>
-        <tr><td>04</td> <td>Resistor de 1 kOhm</td></tr>
+        <tr><td>02</td> <td>Resistor de 1 kOhm</td></tr>
         <tr><td>01</td> <td>Buzzer</td></tr>
         <tr><td>01</td> <td>Sensor LDR</td></tr>
-        <tr><td>01</td> <td>Sensor TMP36</td></tr>
         <tr><td>--</td> <td>Fios</td></tr>
     </table>
 </div>
 
 <br>
-<div align="center"><img src="/Aula 4/imgs/sensor_incendio.png" alt="" width="500px">
+<div align="center"><img src="/Aula 4/imgs/Desafio2_despertador_solar.png" alt="" width="500px">
     <p><b>Esquema de montagem do circuito</b></p>
 </div>
 
 <h4>Código</h4>
 
 ```c++
-#define LED_VD 2
-#define LED_VM 3
-#define BUZZER 5
+#define BUZZER 4
 
-const int sensor_tmp = A4;
 const int ldr = A5;
 
 void setup() {
   Serial.begin(9600);
   pinMode(A5, INPUT);
-  pinMode(A4, INPUT);
-  pinMode(LED_VD, OUTPUT);
-  pinMode(LED_VM, OUTPUT);
   pinMode(BUZZER, OUTPUT);
 }
  
 void loop() {
-  int temperatura = analogRead(sensor_tmp);
   int luz = analogRead(ldr);
-  
-  temperatura = map(temperatura, 20, 358, -40, 125);
   
   Serial.print("Luz: ");
   Serial.println(luz);
-  Serial.print("Temperatura: ");
-  Serial.println(temperatura);
   
-  if(temperatura >= 60 && luz <= 500){
+  if(luz <= 400){
     tone(BUZZER, 329);
-    digitalWrite(LED_VD, LOW);
-    
-    for(int i = 0; i < 5; i++){
-      digitalWrite(LED_VM, HIGH);
-      delay(20);
-      digitalWrite(LED_VM, LOW);
-    }
-    
-  }else if(temperatura >= 60 && luz > 500){
-    tone(BUZZER, 261);
-    digitalWrite(LED_VD, HIGH);
-    
-  }else{
-    digitalWrite(LED_VD, HIGH);
+  	delay(100);
     noTone(BUZZER);
+    delay(100);
   }
-  
-  delay(300);
+  else
+    delay(200);
+}
+```
+
+
+<h3>Desafio 3</h3>
+
+<div align='center'>
+    <h4>Tabela de materiais necessários para esse desafio</h4>
+    <table>
+        <tr><td>Quantidade</td><td>Item</td></tr>
+        <tr><td>01</td> <td>Arduino Uno</td></tr>
+        <tr><td>01</td> <td>Protoboard</td></tr>
+        <tr><td>01</td> <td>Resistor de 5 kOhm</td></tr>
+        <tr><td>01</td> <td>Servo motor</td></tr>
+        <tr><td>01</td> <td>Sensor DHT11</td></tr>
+        <tr><td>--</td> <td>Fios</td></tr>
+    </table>
+</div>
+
+<br>
+<div align="center"><img src="/Aula 4/imgs/Desafio3_controle_de_estufa.png" alt="" width="500px">
+    <p><b>Esquema de montagem do circuito</b></p>
+</div>
+
+<h4>Código</h4>
+
+```c++
+#include <DHT.h>
+#include <Servo.h>
+
+#define DHTPIN 2          // Pino do sensor DHT11
+#define DHTTYPE DHT11     // Tipo de sensor DHT11
+
+DHT dht(DHTPIN, DHTTYPE);
+Servo myservo;
+
+bool servoRotated = false;
+
+void setup() {
+  Serial.begin(9600);
+  dht.begin();
+  myservo.attach(3);   // Pino do servo motor
+}
+
+void loop() {
+  float temp = dht.readTemperature();     // Ler a temperatura em graus Celsius
+  float umid = dht.readHumidity();        // Ler a umidade relativa em percentual
+
+  Serial.print("Temperatura: ");
+  Serial.print(temp);
+  Serial.print("°C | Umidade: ");
+  Serial.print(umid);
+  Serial.println("%");
+
+  if (temp >= 40.0 && !servoRotated) {
+    myservo.write(90);  // Girar o servo motor 90 graus
+    servoRotated = true;
+  } else if (temp <= 38.0 && servoRotated) {
+    myservo.write(0);   // Retornar o servo à posição original
+    servoRotated = false;
+  }
+
+  if (umid > 70.0) {
+    myservo.write(45);  // Abrir o servo motor por 45 graus
+    delay(1000);        // Manter aberto por 1 segundo
+    myservo.write(0);   // Retornar o servo à posição original
+  }
+
+  delay(2000);  // Aguardar 2 segundos entre leituras
 }
 ```
