@@ -1,30 +1,36 @@
-<h1>Aula 4</h1>
+# Aula 4
 
-<a href="https://github.com/RAS-UFPB/resumo_das_aulas_do_grupo_de_sistemas_embarcados/tree/main/Resumo%20aula%204"><b>Resumo da aula</b></a>
+[**Resumo da aula**](https://github.com/RAS-UFPB/resumo_das_aulas_do_grupo_de_sistemas_embarcados/tree/main/Resumo%20aula%204)
 
-<h2>Resolução dos desafios</h2>
+## Resolução dos desafios
 
-<h3>Desafio 1</h3>
+### Desafio 1
 
 <div align='center'>
-    <h4>Tabela de materiais necessários para esse desafio</h4>
-    <table>
-        <tr><td>Quantidade</td><td>Item</td></tr>
-        <tr><td>01</td> <td>Arduino Uno</td></tr>
-        <tr><td>03</td> <td>LED</td></tr>
-        <tr><td>03</td> <td>Resistor 220 ohm</td></tr>
-        <tr><td>01</td> <td>Sensor HC-SR04</td></tr>
-        <tr><td>--</td> <td>Fios</td></tr>
-    </table>
+
+#### Tabela de materiais necessários para esse desafio
+
+| Quantidade | Item |
+|------------|------|
+| 01 | Arduino Uno |
+| 03 | LED |
+| 03 | Resistor 220 ohm |
+| 01 | Sensor HC-SR04 |
+| -- | Fios |
+
 </div>
 
 <br>
-<div align="center"><img src="/Aula 4/imgs/sensor_de_re.png" alt="" width="500px">
-    <p><b>Esquema de montagem do circuito</b></p>
+
+<div align="center">
+
+![](/Aula%204/imgs/sensor_de_re.png)
+
+**Esquema de montagem do circuito**
+
 </div>
 
-<h4>Código</h4>
-
+#### Código
 ```c++
 #define TRIGGER 6
 #define ECHO 5
@@ -75,30 +81,34 @@ void loop()
   }
 ```
 
-
-
-<h3>Desafio 2</h3>
+### Desafio 2
 
 <div align='center'>
-    <h4>Tabela de materiais necessários para esse desafio</h4>
-    <table>
-        <tr><td>Quantidade</td><td>Item</td></tr>
-        <tr><td>01</td> <td>Arduino Uno</td></tr>
-        <tr><td>01</td> <td>Protoboard</td></tr>
-        <tr><td>02</td> <td>Resistor de 1 kOhm</td></tr>
-        <tr><td>01</td> <td>Buzzer</td></tr>
-        <tr><td>01</td> <td>Sensor LDR</td></tr>
-        <tr><td>--</td> <td>Fios</td></tr>
-    </table>
+
+#### Tabela de materiais necessários para esse desafio
+
+| Quantidade | Item |
+|------------|------|
+| 01 | Arduino Uno |
+| 01 | Protoboard |
+| 02 | Resistor de 1 kOhm |
+| 01 | Buzzer |
+| 01 | Sensor LDR |
+| -- | Fios |
+
 </div>
 
 <br>
-<div align="center"><img src="/Aula 4/imgs/Desafio2_despertador_solar.png" alt="" width="500px">
-    <p><b>Esquema de montagem do circuito</b></p>
+
+<div align="center">
+
+![](/Aula%204/imgs/Desafio2_despertador_solar.png)
+
+**Esquema de montagem do circuito**
+
 </div>
 
-<h4>Código</h4>
-
+#### Código
 ```c++
 #define BUZZER 4
 
@@ -127,29 +137,34 @@ void loop() {
 }
 ```
 
-
-<h3>Desafio 3</h3>
+### Desafio 3
 
 <div align='center'>
-    <h4>Tabela de materiais necessários para esse desafio</h4>
-    <table>
-        <tr><td>Quantidade</td><td>Item</td></tr>
-        <tr><td>01</td> <td>Arduino Uno</td></tr>
-        <tr><td>01</td> <td>Protoboard</td></tr>
-        <tr><td>01</td> <td>Resistor de 5 kOhm</td></tr>
-        <tr><td>01</td> <td>Servo motor</td></tr>
-        <tr><td>01</td> <td>Sensor DHT11</td></tr>
-        <tr><td>--</td> <td>Fios</td></tr>
-    </table>
+
+#### Tabela de materiais necessários para esse desafio
+
+| Quantidade | Item |
+|------------|------|
+| 01 | Arduino Uno |
+| 01 | Protoboard |
+| 01 | Resistor de 5 kOhm |
+| 01 | Servo motor |
+| 01 | Sensor DHT11 |
+| -- | Fios |
+
 </div>
 
 <br>
-<div align="center"><img src="/Aula 4/imgs/Desafio3_controle_de_estufa.png" alt="" width="500px">
-    <p><b>Esquema de montagem do circuito</b></p>
+
+<div align="center">
+
+![](/Aula%204/imgs/Desafio3_controle_de_estufa.png)
+
+**Esquema de montagem do circuito**
+
 </div>
 
-<h4>Código</h4>
-
+#### Código
 ```c++
 #include <DHT.h>
 #include <Servo.h>
