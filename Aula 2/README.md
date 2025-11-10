@@ -1,32 +1,38 @@
-<h1>Aula 2.</h1>
+# Aula 2.
 
-<a href="https://github.com/RAS-UFPB/resumo_das_aulas_do_grupo_de_sistemas_embarcados/tree/main/Resumo%20aula%202"><b>Resumo da aula</b></a>
+[**Resumo da aula**](https://github.com/RAS-UFPB/resumo_das_aulas_do_grupo_de_sistemas_embarcados/tree/main/Resumo%20aula%202)
 
-<h2>Resolução dos desafios</h2>
+## Resolução dos desafios
 
-<h3>Desafio 1</h3>
+### Desafio 1
 
 <div align='center'>
-    <h4>Tabela de materiais necessários para esse desafio</h4>
-    <table>
-        <tr><td>Quantidade</td> <td>Item</td></tr>
-        <tr><td>01</td> <td>Protoboard</td></tr>
-        <tr><td>04</td> <td>220Ω Resistor</td></tr>
-        <tr><td>03</td> <td>Leds</td></tr>
-        <tr><td>01</td> <td>Botão</td></tr>
-        <tr><td>--</td> <td>Fios</td></tr>
-    </table>
+
+#### Tabela de materiais necessários para esse desafio
+
+| Quantidade | Item |
+|------------|------|
+| 01 | Protoboard |
+| 04 | 220Ω Resistor |
+| 03 | Leds |
+| 01 | Botão |
+| -- | Fios |
+
 </div>
 
 <br>
 
-<div align="center"><img src="./imgs/circuito desafio 1.png" alt="" width="800px">
-    <p><b>Esquema de montagem do circuito</b></p>
+<div align="center">
+
+![](./imgs/circuito%20desafio%201.png)
+
+**Esquema de montagem do circuito**
+
 </div>
-<hr>
 
-<h4>Código</h4>
+---
 
+#### Código
 ```c++
 int ledPinVerde = 2;//Define ledPinVerde no pino digital 2
 int ledPinAmarelo = 3;//Define ledPinAmarelo no pino digital 3
@@ -82,28 +88,34 @@ void loop(){
 }
 ```
 
-<h3>Desafio 2</h3>
+### Desafio 2
 
 <div align='center'>
-    <h4>Tabela de materiais necessários para esse desafio</h4>
-    <table>
-        <tr><td>Quantidade</td> <td>Item</td></tr>
-        <tr><td>01</td> <td>Protoboard</td></tr>
-        <tr><td>02</td> <td>220Ω Resistor</td></tr>
-        <tr><td>02</td> <td>Leds</td></tr>
-        <tr><td>--</td> <td>Fios</td></tr>
-    </table>
+
+#### Tabela de materiais necessários para esse desafio
+
+| Quantidade | Item |
+|------------|------|
+| 01 | Protoboard |
+| 02 | 220Ω Resistor |
+| 02 | Leds |
+| -- | Fios |
+
 </div>
 
 <br>
 
-<div align="center"><img src="./imgs/circuito desafio 2.png" alt="" width="800px">
-    <p><b>Esquema de montagem do circuito</b></p>
+<div align="center">
+
+![](./imgs/circuito%20desafio%202.png)
+
+**Esquema de montagem do circuito**
+
 </div>
-<hr>
 
-<h4>Código:</h4>
+---
 
+#### Código:
 ```c++
 int pinoLedVermelho = 4;
 int pinoLedVerde = 6;
@@ -160,4 +172,3 @@ void loop()
   }
 }
 ```
-
