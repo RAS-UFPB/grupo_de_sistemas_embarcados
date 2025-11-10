@@ -1,45 +1,56 @@
-<h1>Aula 1.</h1>
+# Aula 1.
 
-<a href="https://github.com/RAS-UFPB/Resumo-das-aulas-do-Grupo-de-Robotica/tree/main/Resumo%20aula%201"><b>Resumo da aula</b></a>
+[**Resumo da aula**](https://github.com/RAS-UFPB/Resumo-das-aulas-do-Grupo-de-Robotica/tree/main/Resumo%20aula%201)
 
-<h2>Resolução dos desafios</h2>
+## Resolução dos desafios
 
-<h3>Desafio 1</h3>
+### Desafio 1
 
 <div align='center'>
-    <h4>Tabela de materiais necessários para esse desafio</h4>
-    <table>
-        <tr><td>Quantidade</td> <td>Item</td></tr>
-        <tr><td>01</td> <td>Protoboard</td></tr>
-        <tr><td>04</td> <td>400Ω Resistor</td></tr>
-        <tr><td>04</td> <td>Leds</td></tr>
-        <tr><td>01</td> <td>Bateria 9V</td></tr>
-        <tr><td>--</td> <td>Fios</td></tr>
-    </table>
+
+#### Tabela de materiais necessários para esse desafio
+
+| Quantidade | Item |
+|------------|------|
+| 01 | Protoboard |
+| 04 | 400Ω Resistor |
+| 04 | Leds |
+| 01 | Bateria 9V |
+| -- | Fios |
+
 </div>
 
 <br>
+
 <div align="center"><img src="./imgs/desafio_01.png" alt="" width="800px">
-    <p><b>Esquema de montagem do circuito</b></p>
-</div>
-<hr>
 
-<h3>Desafio 2</h3>
+**Esquema de montagem do circuito**
+
+</div>
+
+---
+
+### Desafio 2
 
 <div align='center'>
-    <h4>Tabela de materiais necessários para esse desafio</h4>
-    <table>
-        <tr><td>Quantidade</td> <td>Item</td></tr>
-        <tr><td>01</td> <td>Protoboard</td></tr>
-        <tr><td>02</td> <td>400Ω Resistor</td></tr>
-        <tr><td>02</td> <td>Leds</td></tr>
-        <tr><td>02</td> <td>Botão</td></tr>
-        <tr><td>01</td> <td>Bateria 9V</td></tr>
-        <tr><td>--</td> <td>Fios</td></tr>
-    </table>
+
+#### Tabela de materiais necessários para esse desafio
+
+| Quantidade | Item |
+|------------|------|
+| 01 | Protoboard |
+| 02 | 400Ω Resistor |
+| 02 | Leds |
+| 02 | Botão |
+| 01 | Bateria 9V |
+| -- | Fios |
+
 </div>
 
 <br>
+
 <div align="center"><img src="./imgs/desafio_02.png" alt="" width="800px">
-    <p><b>Esquema de montagem do circuito</b></p>
+
+**Esquema de montagem do circuito**
+
 </div>
