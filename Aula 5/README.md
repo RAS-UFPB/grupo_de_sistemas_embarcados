@@ -1,26 +1,19 @@
-<h1>Aula 5</h1>
+# Aula 5
 
-<a href="https://github.com/RAS-UFPB/resumo_das_aulas_do_grupo_de_sistemas_embarcados/tree/main/Resumo%20aula%205"><b>Resumo da aula</b></a>
+[**Resumo da aula**](https://github.com/RAS-UFPB/resumo_das_aulas_do_grupo_de_sistemas_embarcados/tree/main/Resumo%20aula%205)
 
-<h2>Resolução do desafio</h2>
-
-``` C++
+## Resolução do desafio
+```C++
 #include <Servo.h>
 #include <LiquidCrystal.h>
 #include <SoftwareSerial.h>
-
 #define rxPin 1
 #define txPin 0
-
 LiquidCrystal lcd (12, 11, 5,4 ,3 ,2);
 SoftwareSerial serialdobluetooth(rxPin, txPin);
-
 Servo myServo;
-
 char valordobluetooth = '0';
-
 int servo = 8;
-
 void setup() {
   lcd.begin(16,2);
   myServo.attach(servo);
@@ -31,7 +24,6 @@ void setup() {
   serialdobluetooth.print("$");
   serialdobluetooth.print("$");
 }
-
 void loop() {
   lcd.setCursor(0,0);
   lcd.print("Ligado");
@@ -41,7 +33,6 @@ void loop() {
   }
  
   myServo.write(0);
-
   if(valordobluetooth == 'A'){
     lcd.setCursor(0,0);
     lcd.print("Cuidado !!");
