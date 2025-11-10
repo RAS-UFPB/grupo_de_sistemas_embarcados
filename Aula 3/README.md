@@ -1,38 +1,42 @@
-<h1>Aula 3</h1>
+# Aula 3
 
-<a href="https://github.com/RAS-UFPB/Resumo-das-aulas-do-Grupo-de-Robotica/blob/main/Resumo%20aula%203"><b>Resumo da aula</b></a>
+[**Resumo da aula**](https://github.com/RAS-UFPB/Resumo-das-aulas-do-Grupo-de-Robotica/blob/main/Resumo%20aula%203)
 
-<h2>Resolução dos desafios</h2>
+## Resolução dos desafios
 
-<h3>Desafio 1</h3>
+### Desafio 1
 
 <div align='center'>
-    <h4>Tabela de materiais necessários para esse desafio</h4>
-    <table>
-        <tr><td>Quantidade</td><td>Item</td></tr>
-        <tr><td>01</td> <td>Arduino Uno</td></tr>
-        <tr><td>01</td> <td>LED</td></tr>
-        <tr><td>01</td> <td>Resistor 220 ohm</td></tr>
-        <tr><td>--</td> <td>Fios</td></tr>
-    </table>
+
+#### Tabela de materiais necessários para esse desafio
+
+| Quantidade | Item |
+|------------|------|
+| 01 | Arduino Uno |
+| 01 | LED |
+| 01 | Resistor 220 ohm |
+| -- | Fios |
+
 </div>
 
 <br>
-<div align="center"><img src="./imgs/desafio1.png" alt="" width="500px">
-    <p><b>Esquema de montagem do circuito</b></p>
+
+<div align="center">
+
+![](./imgs/desafio1.png)
+
+**Esquema de montagem do circuito**
+
 </div>
 
-<h4>Código</h4>
-
+#### Código
 ```c++
 #define LED_PIN = 9;
 int dimmerValue = 0;
-
 void setup() {
     Serial.begin(9600);
     pinMode(LED_PIN, OUTPUT);
 }
-
 void loop() {
     if (Serial.available()) {
         dimmerValue = Serial.read();
@@ -43,38 +47,39 @@ void loop() {
 }
 ```
 
-
-
-<h3>Desafio 2</h3>
+### Desafio 2
 
 <div align='center'>
-    <h4>Tabela de materiais necessários para esse desafio</h4>
-    <table>
-        <tr><td>Quantidade</td><td>Item</td></tr>
-        <tr><td>01</td> <td>Arduino Uno</td></tr>
-        <tr><td>01</td> <td>Protoboard</td></tr>
-        <tr><td>01</td> <td>Potenciômetro</td></tr>
-        <tr><td>01</td> <td>Servo Motor</td></tr>
-        <tr><td>--</td> <td>Fios</td></tr>
-    </table>
+
+#### Tabela de materiais necessários para esse desafio
+
+| Quantidade | Item |
+|------------|------|
+| 01 | Arduino Uno |
+| 01 | Protoboard |
+| 01 | Potenciômetro |
+| 01 | Servo Motor |
+| -- | Fios |
+
 </div>
 
 <br>
-<div align="center"><img src="./imgs/desafio2.png" alt="" width="500px">
-    <p><b>Esquema de montagem do circuito</b></p>
+
+<div align="center">
+
+![](./imgs/desafio2.png)
+
+**Esquema de montagem do circuito**
+
 </div>
 
-<h4>Código</h4>
-
+#### Código
 ```c++
 #include <Servo.h>
-
 #define PIN_POTENCIOMETRO A5
 #define PIN_SERVO 9
-
 int valorDoPotenciometro = 0;
 Servo servo;
-
 void setup(){
   servo.attach(PIN_SERVO);
   pinMode(PIN_POTENCIOMETRO, INPUT);
@@ -85,29 +90,34 @@ void loop(){
 }
 ```
 
-
-<h3>Desafio 3</h3>
+### Desafio 3
 
 <div align='center'>
-    <h4>Tabela de materiais necessários para esse desafio</h4>
-    <table>
-        <tr><td>Quantidade</td> <td>Item</td></tr>
-        <tr><td>01</td> <td>Arduino Uno</td></tr>
-        <tr><td>01</td> <td>Protoboard</td></tr>
-        <tr><td>01</td> <td>Potenciômetro</td></tr>
-        <tr><td>02</td> <td>Motores DC</td></tr>
-        <tr><td>01</td> <td>L293D</td></tr>
-        <tr><td>--</td> <td>Fios</td></tr>
-    </table>
+
+#### Tabela de materiais necessários para esse desafio
+
+| Quantidade | Item |
+|------------|------|
+| 01 | Arduino Uno |
+| 01 | Protoboard |
+| 01 | Potenciômetro |
+| 02 | Motores DC |
+| 01 | L293D |
+| -- | Fios |
+
 </div>
 
 <br>
-<div align="center"><img src="./imgs/desafio3.png" alt="" width="500px">
-    <p><b>Esquema de montagem do circuito</b></p>
+
+<div align="center">
+
+![](./imgs/desafio3.png)
+
+**Esquema de montagem do circuito**
+
 </div>
 
-<h4>Código</h4>
-
+#### Código
 ```c++
 #define POTENCIOMETRO A0
 #define ENTRADA1 5
@@ -116,10 +126,8 @@ void loop(){
 #define ENTRADA4 10
 #define ENABLE1 2
 #define ENABLE3 3
-
 int valorPotenc;
 int estadoMovimento;
-
 void setup() {
     Serial.begin(9600);
   
@@ -131,7 +139,6 @@ void setup() {
     pinMode(ENABLE1, OUTPUT);
     pinMode(ENABLE3, OUTPUT);
 }
-
 void loop() {
     valorPotenc = analogRead(POTENCIOMETRO);
     estadoMovimento = map(valorPotenc, 0, 1023, 1, 3);
@@ -139,7 +146,6 @@ void loop() {
     if(estadoMovimento == 1) {
         digitalWrite(ENABLE1, HIGH);
         digitalWrite(ENABLE3, HIGH);
-
         analogWrite(ENTRADA1, HIGH);
         digitalWrite(ENTRADA2, LOW);
         digitalWrite(ENTRADA3, LOW);
@@ -155,7 +161,6 @@ void loop() {
     } else if(estadoMovimento == 3) {
         digitalWrite(ENABLE1, LOW);
         digitalWrite(ENABLE3, LOW);
-
         digitalWrite(ENTRADA1, LOW);
         digitalWrite(ENTRADA2, LOW);
         digitalWrite(ENTRADA3, LOW);
