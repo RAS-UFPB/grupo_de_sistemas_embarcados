@@ -32,17 +32,24 @@
 #### Código
 ```c++
 #define LED_PIN 9
+
 int dimmerValue = 0;
+
 void setup() {
     Serial.begin(9600);
     pinMode(LED_PIN, OUTPUT);
 }
+
 void loop() {
+  
     if (Serial.available()) {
-        dimmerValue = Serial.read();
-        dimmerValue = map(dimmerValue, 0, 255, 0, 255);
-        analogWrite(LED_PIN, dimmerValue);
-        Serial.println(dimmerValue);
+      dimmerValue = Serial.parseInt();
+      dimmerValue = constrain(dimmerValue, 0, 1023);
+      
+      int dimmerOut = map(dimmerValue, 0, 1023, 0, 255);
+      
+      analogWrite(LED_PIN, dimmerOut);
+      Serial.println(dimmerOut);
     }
 }
 ```
