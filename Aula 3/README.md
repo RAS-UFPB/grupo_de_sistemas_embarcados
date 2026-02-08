@@ -31,7 +31,7 @@
 
 #### Código
 ```c++
-#define LED_PIN = 9;
+#define LED_PIN 9
 int dimmerValue = 0;
 void setup() {
     Serial.begin(9600);
