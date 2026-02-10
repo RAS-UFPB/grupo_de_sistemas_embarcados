@@ -110,18 +110,17 @@ void loop()
 
 #### Código
 ```c++
-#define BUZZER 4
-
-const int ldr = A5;
+#define BUZZER 3
+#define LDR A5
 
 void setup() {
   Serial.begin(9600);
-  pinMode(A5, INPUT);
+  pinMode(LDR, INPUT);
   pinMode(BUZZER, OUTPUT);
 }
  
 void loop() {
-  int luz = analogRead(ldr);
+  int luz = analogRead(LDR);
   
   Serial.print("Luz: ");
   Serial.println(luz);
@@ -132,8 +131,6 @@ void loop() {
     noTone(BUZZER);
     delay(100);
   }
-  else
-    delay(200);
 }
 ```
 
